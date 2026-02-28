@@ -3,63 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Manager Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Project Manager Dashboard</h1>
-        <nav>
-            <ul>
-                <li><a href="#employees">Employees</a></li>
-                <li><a href="#tasks">Tasks</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <div class="sidebar">
+        <h2>Dashboard Navigation</h2>
+        <ul>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#employees">Employees</a></li>
+            <li><a href="#tasks">Tasks</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <section id="statistics">
+            <h2>Statistics</h2>
+            <p>Overview of key metrics...</p>
+        </section>
         <section id="employees">
-            <h2>Employees Management</h2>
+            <h2>Employees</h2>
             <table>
-                <tr>
-                    <th>Employee ID</th>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                </tr>
-                <!-- Employee rows will go here -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee rows will be dynamically inserted here -->
+                </tbody>
             </table>
-            <button>Add Employee</button>
         </section>
         <section id="tasks">
-            <h2>Tasks Management</h2>
+            <h2>Tasks</h2>
             <table>
-                <tr>
-                    <th>Task ID</th>
-                    <th>Task Name</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-                <!-- Task rows will go here -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Task rows will be dynamically inserted here -->
+                </tbody>
             </table>
-            <button>Add Task</button>
         </section>
         <section id="projects">
-            <h2>Projects Management</h2>
+            <h2>Projects</h2>
             <table>
-                <tr>
-                    <th>Project ID</th>
-                    <th>Project Name</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-                <!-- Project rows will go here -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Project rows will be dynamically inserted here -->
+                </tbody>
             </table>
-            <button>Add Project</button>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Project Manager Dashboard</p>
-    </footer>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add/Edit Item</h2>
+            <form id="modal-form">
+                <!-- Form fields will be dynamically inserted here -->
+            </form>
+            <button id="save-button">Save</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript code for modal and other functionalities will be placed here
+    </script>
 </body>
 </html>
