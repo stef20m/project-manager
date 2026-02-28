@@ -4,41 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Admin Dashboard</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active"><a class="nav-link" href="#">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Employees</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Tasks</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#employees">Employees</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </aside>
         <main>
             <section id="dashboard">
-                <h2>Dashboard</h2>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3>Overview</h3>
-                        <p>Dashboard content goes here...</p>
-                    </div>
+                <h2>Dashboard Overview</h2>
+                <div class="stats">
+                    <div class="stat"><h3>Total Employees</h3><p>50</p></div>
+                    <div class="stat"><h3>Active Tasks</h3><p>25</p></div>
+                    <div class="stat"><h3>Projects</h3><p>10</p></div>
                 </div>
             </section>
             <section id="employees">
                 <h2>Employees</h2>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#addEmployeeModal">Add Employee</button>
-                <table class="table">
+                <table>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -48,86 +47,55 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>Manager</td>
-                            <td><button class="btn btn-warning" data-toggle="modal" data-target="#editEmployeeModal">Edit</button></td>
-                        </tr>
+                        <!-- Employee rows will be populated here -->
                     </tbody>
                 </table>
             </section>
             <section id="tasks">
                 <h2>Tasks</h2>
-                <table class="table">
+                <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Task Name</th>
+                            <th>Description</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Design Mockup</td>
-                            <td>In Progress</td>
-                        </tr>
+                        <!-- Task rows will be populated here -->
                     </tbody>
                 </table>
             </section>
             <section id="projects">
                 <h2>Projects</h2>
-                <table class="table">
+                <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Project Name</th>
+                            <th>Name</th>
                             <th>Deadline</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Website Redesign</td>
-                            <td>2026-03-15</td>
-                        </tr>
+                        <!-- Project rows will be populated here -->
                     </tbody>
                 </table>
             </section>
         </main>
-        <!-- Modals -->
-        <div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="employeeName">Employee Name</label>
-                                <input type="text" class="form-control" id="employeeName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="employeePosition">Position</label>
-                                <input type="text" class="form-control" id="employeePosition" required>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add Employee</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </div>
+    <div class="modal" id="modal">
+        <form id="modal-form">
+            <h2>Add/Edit Item</h2>
+            <label for="item-name">Name:</label>
+            <input type="text" id="item-name" required>
+            <label for="item-description">Description:</label>
+            <textarea id="item-description"></textarea>
+            <button type="submit">Save</button>
+            <button type="button" id="modal-close">Close</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
